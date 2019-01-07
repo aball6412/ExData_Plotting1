@@ -10,3 +10,5 @@ df <- df %>%
 
 with(df, plot(datetime, Global_active_power, type="n", ylab = 'Global Active Power (kilowatts)', xlab = ''))
 lines(df$datetime, df$Global_active_power)
+dev.copy(png, file = 'plot2.png')
+dev.off()

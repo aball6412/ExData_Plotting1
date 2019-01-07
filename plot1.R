@@ -9,4 +9,6 @@ df <- df %>%
   select(datetime, everything())
 
 df$Global_active_power <- as.double(df$Global_active_power)
-hist(df$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red")
+with(df, hist(Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red"))
+dev.copy(png, file = 'plot1.png')
+dev.off()
